@@ -1,0 +1,36 @@
+.burger {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+    &:hover {
+      cursor: pointer;
+    }
+  @media (min-width: 726px) {
+    margin: 0 auto;
+  }
+    &__line {
+      margin-bottom: 6px;
+      height: 6px;
+      background-color: #fff;
+      display: block;
+      transition: 0.4s ease;
+    }
+}
+
+.burger-top {
+  transform: rotate(-405deg);
+  width: 33px;
+  transition: transform 0.5s ease;
+  margin-bottom: -18px;
+}
+
+.burger-midle {
+  transform: scale(0);
+  transition: transform 0.1s ease-in;
+}
+.burger-bottom {
+  transform: rotate(405deg);
+  width: 33px;
+  transition: transform 0.5s ease;
+  //margin-top: -22px;
+}

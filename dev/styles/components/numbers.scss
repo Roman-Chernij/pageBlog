@@ -1,0 +1,45 @@
+.content-numbers {
+  padding-top: 58px;
+  @include clearfix;
+}
+
+.numbers-item{
+  float: left;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  border-color: #c8c8c8;
+  font-size: 17px;
+  background-color: transparent;
+  color: $akcentColor;
+    &:last-child {
+      border-right: 1px solid;
+      border-color: #c8c8c8;
+    }
+    &_mod-pading-1 {
+      padding: 14px 10px 14px 9px;
+    }
+    &_mod-pading-2 {
+      padding: 16px 16px 12px 17px;
+
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: $akcentColorHover;
+      border-color: $akcentColorHover;
+      color: #fff;
+      transition: all .45s ease-in-out;
+    }
+    &:active {
+      border-color:$akcentColor;
+      background-color: $akcentColor;
+      transition: all .25s ease-in-out;
+    }
+}
+
+.number-active {
+  border-color:$akcentColor;
+  background-color: $akcentColor;
+  color: #fff;
+  transition: all .45s ease-in-out;
+}

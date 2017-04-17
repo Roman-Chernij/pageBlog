@@ -1,0 +1,12 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+    &__dots {
+      position: absolute;
+      top: 50%;
+      right: 28px;
+      margin-top: -3.6%;
+    }
+
+}
+

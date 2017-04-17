@@ -1,0 +1,180 @@
+.touch {
+  margin-top: 131px;
+  margin-bottom: 176px;
+  border-top: 1px solid #000;
+    &__title {;
+      font-size: 25px;
+      padding: 0 30px 28px;
+      margin-left: 0;
+      margin-bottom: 21px;
+      text-align: center;
+        @media (min-width: 600px) {
+          margin-left: 28%;
+        }
+        @media (min-width: 1000px) {
+          padding: 108px 107px 24px;
+          margin-left: 26.2%;
+          margin-bottom: 52px;
+        }
+        @media (min-width: 320px) and (max-width: 1300px) {
+          font-size: calc(0.0255 * 100vw + 16.84px);
+        }
+      @media (min-width: 1301px) {
+        font-size: 50px;
+      }
+    }
+    &__text {
+      font-family: arial, sans-serif;
+      padding: 0;
+      font-size: 20px;
+      line-height: 1.5;
+      position: relative;
+        @media (min-width: 900px) {
+          padding: 0 129px 0 130px;
+        }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -9px;
+        background-color: transparent;
+        width: 0;
+        transition: all ease-in-out 600ms;
+        height: 2px;
+        z-index: 100;
+      }
+      &:hover{
+        &::after{
+          width: 100%;
+          background-color: #000;
+          transition: all ease-in-out 400ms;
+        }
+      }
+    }
+}
+
+.touch__form {
+  padding-top: 97px;
+  padding-left: 2px;
+  width: 100%;
+}
+
+.form__field {
+  width: 100%;
+  @include clearfix;
+}
+
+.form__part {
+  width: 100%;
+    @media (min-width: 690px) {
+      width: 47%;
+    }
+}
+
+.part_mod-right {
+  float: none;
+    @media (min-width: 690px) {
+      float: right;
+    }
+}
+
+.part_mod-left {
+  float: none;
+    @media (min-width: 690px) {
+      float: left;
+    }
+}
+
+.field__name {
+  display: block;
+  width: 100%;
+  font-size: 25px;
+}
+
+.field__input {
+  display: block;
+  width: 100%;
+  border-right: none;
+  border-left: none;
+  border-top:none;
+  border-bottom: 1px solid #c0c0c0;
+  padding: 13px 0 12px 19px;
+  font-size: 31px;
+  margin-bottom: 42px;
+  position: relative;
+  z-index: 20;
+}
+
+.form__submit {
+  margin-top: 35px;
+  font-size: 25.7px;
+  padding: 14px 29px 14px 26px;
+  background-color: #f39c12;
+  border: none;
+  color: #fff;
+  margin-left: -2px;
+    &:hover {
+      color: #616257;
+      background-color: #f3891e;
+      transition: all linear 400ms;
+    }
+    &:active {
+      background-color: #ff9a37;
+      transition: background-color linear 400ms;
+    }
+}
+
+.input__invalid {
+  background-color: rgba(#ff2a0c, 0.7);
+  color: #fff;
+  transition: all ease-in-out 400ms;
+}
+
+.input__validity {
+  background-color: rgba(#40ff2f, 0.5);
+  color: #2b30ff;
+  transition: all ease-in-out 400ms;
+}
+
+.form__message {
+  width: 100%;
+  position: relative;
+}
+
+.message {
+    &__name {
+      display: block;
+      width: 100%;
+      font-size: 25.6px;
+      padding-top: 7px;
+    }
+    &__input {
+      display: block;
+      width: 100%;
+      border-right: none;
+      border-left: none;
+      border-top:none;
+      border-bottom: 1px solid #c0c0c0;
+      font-size: 24px;
+      padding: 13px 10px 0;
+      height: 138px;
+
+    }
+}
+
+.message__input:focus + .line-massage {
+  width: 100%;
+  background-color: #f39c12;
+  transition: all ease-in-out 400ms;
+}
+
+.line-massage {
+    display: block;
+    position: absolute;
+    bottom: -9px;
+    background-color: transparent;
+    width: 0;
+    transition: all ease-in-out 600ms;
+    height: 2px;
+    z-index: 100;
+}

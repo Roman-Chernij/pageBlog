@@ -1,0 +1,16 @@
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1025px;
+
+$mob-max: "max-width: $tablet - 1";
+$mob-min: "min-width: $mobile";
+$tab-max: "max-width: $desktop - 1";
+$tab-min: "min-width: $tablet";
+$desk-min: "min-width: $desktop";
+
+$fontOneLine:'Raleway-Bold';
+$fontSearch:'Roboto-Regular';
+
+$akcentColor: #f39c11;
+$akcentColorHover: #e29a0a;
+$sampleBtnBgColor: #8d8c8c;

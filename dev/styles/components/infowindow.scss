@@ -1,0 +1,62 @@
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+.infowindow {
+  width: 300px;
+  padding: 5px;
+  background-color: rgba(#f1ab3a, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  @media (min-width: 760px) {
+    top: 176px;
+    padding: 63px 35px 65px 41px;
+  }
+    @media (min-width: 355px) {
+      width: 351px;
+
+    }
+    @media (min-width: 970px) {
+      left: 62.3%;
+    }
+
+    &__title {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+
+    }
+    &__adress {
+      color: #fff;
+      font-size: 22px;
+    }
+    &__contact {
+      margin-top: 10px;
+      @media (min-width: 400px) {
+        top: -512px;
+        margin-top: 41px;
+      }
+    }
+}
+
+.contact {
+    &__name {
+      width: 80px;
+      float: left;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    &__view {
+      width: calc(100% - 80px);
+      float: right;
+      font-size: 22px;
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+    }
+}
