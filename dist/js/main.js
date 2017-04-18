@@ -324,6 +324,7 @@ Numbers.prototype.activeNext = function () {
 
 function Form() {
     this.formBlock = document.querySelector('.touch__form');
+    console.log(this.formBlock);
     this.fieldInput = this.formBlock.elements;
     this.requestSubmit = document.querySelector('.request-submit');
     this.requestSubmit.addEventListener("click", this.sendForm.bind(this));
@@ -372,19 +373,19 @@ Form.prototype.activForm = function (e) {
         }
 };
 
-Form.prototype.sendForm = function () {
-    event.preventDefault();
+Form.prototype.sendForm = function (event) {
+
     this.elemForm = this.formBlock.elements;
     this.elemLength = this.elemForm.length-1;
     this.containsClass();
     invalidArray = this.invalidContent.split(' ');
     invalidNumber = invalidArray.length -1;
     console.log(invalidNumber);
-    if(invalidNumber == this.elemLength) {
-        this.rut();
-        } else {
-            alert('not all fields are filled in correctly');
-    }
+    if(invalidNumber != this.elemLength) {
+        alert('not all fields are filled in correctly');
+        event.preventDefault();
+        return false;
+        }
 };
 
 Form.prototype.containsClass = function () {
@@ -395,8 +396,4 @@ Form.prototype.containsClass = function () {
             this.invalidContent += this.elemForm[t].getAttribute('id') + ' ';
         }
     }
-};
-
-Form.prototype.rut = function () {
-    this.formBlock.submit();
 };
