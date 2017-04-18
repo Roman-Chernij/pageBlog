@@ -324,7 +324,9 @@ Numbers.prototype.activeNext = function () {
 
 function Form() {
     this.formBlock = document.querySelector('.touch__form');
-    this.fieldInput = document.querySelectorAll('.field__input');
+    this.fieldInput = this.formBlock.elements;
+    this.requestSubmit = document.querySelector('.request-submit');
+    this.requestSubmit.addEventListener("click", this.sendForm.bind(this));
     this.AddInput();
 }
 
@@ -339,13 +341,13 @@ Form.prototype.validation = function (elem) {
     var str = elem.value;
         this.result = testing.test(str);
 };
-
+///\d{1,2}/
 Form.prototype.patern = function (ret) {
     var regularExpressions = {
         'name':'([a-zA-Z]+)$',
         'email': '[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})',
         'subject':'([a-zA-Z]+)$',
-        'time':'/^\d+$/',
+        'time':'([a-zA-Z]+)$',
         'message':'([a-zA-Z]+)$'
     };
 
@@ -370,6 +372,31 @@ Form.prototype.activForm = function (e) {
         }
 };
 
-Form.prototype.result = function () {
+Form.prototype.sendForm = function () {
+    event.preventDefault();
+    this.elemForm = this.formBlock.elements;
+    this.elemLength = this.elemForm.length-1;
+    this.containsClass();
+    invalidArray = this.invalidContent.split(' ');
+    invalidNumber = invalidArray.length -1;
+    console.log(invalidNumber);
+    if(invalidNumber == this.elemLength) {
+        this.rut();
+        } else {
+            alert('not all fields are filled in correctly');
+    }
+};
 
+Form.prototype.containsClass = function () {
+    this.invalidContent = '';
+    for(var t=0;t<this.elemLength;t++) {
+        this.invalid = this.elemForm[t].classList.contains("input__validity");
+        if(this.invalid) {
+            this.invalidContent += this.elemForm[t].getAttribute('id') + ' ';
+        }
+    }
+};
+
+Form.prototype.rut = function () {
+    this.formBlock.submit();
 };

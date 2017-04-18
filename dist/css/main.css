@@ -397,6 +397,10 @@ p {
   font-size: 24px;
 }
 
+.search__submit {
+  display: none;
+}
+
 .map {
   height: 100%;
   width: 100%;
@@ -1235,24 +1239,6 @@ p {
   .touch__text {
     padding: 0 129px 0 130px;
   }
-}
-
-.touch__text::after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: -9px;
-  background-color: transparent;
-  width: 0;
-  transition: all ease-in-out 600ms;
-  height: 2px;
-  z-index: 100;
-}
-
-.touch__text:hover::after {
-  width: 100%;
-  background-color: #000;
-  transition: all ease-in-out 400ms;
 }
 
 .touch__form {
